@@ -7,7 +7,7 @@ pillow>=10.0.0
 requests>=2.31.0
 
 # AI Features (Required for AI generation)
-openai>=0.28.0,<1.0.0
+openai>=1.0.0
 
 # Security - Enhanced (Recommended)
 keyring>=24.0.0          # Uses OS credential store (best security)
