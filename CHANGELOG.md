@@ -2,133 +2,76 @@
 
 All notable changes to Moltbook Agent Manager will be documented in this file.
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+## [3.2.0] - 2026-02-05
+
+### Added
+- **Auto-Reply** - AI automatically replies to comments on your posts
+- **Hide Replied** - Toggle to filter out comments you've already responded to
+- **Manual Hide** - "Hide" button to mark comments as replied without using API
+- **Status Bar** - Bottom bar showing API health, rate limit countdown, version
+- **Keyboard Shortcut** - Ctrl+Enter to submit posts
+- **Feed Auto-Load** - Feed tab loads automatically on first click
+- **Interactive Feed Cards** - Timestamps, comment counts, "Open on Moltbook" button
+- **Character Counter** - Live character count in compose tab
+
+### Changed
+- **GPT-5-nano Support** - Increased `max_completion_tokens` to 5000 for reasoning models
+- **Removed temperature parameter** - GPT-5-nano only supports temperature=1
+- **Modernized UI** - Softer color palette, better selection states, status badges
+- **Sidebar Redesign** - Agent cards with Claimed/Unclaimed badges, selection highlight
+- **Dashboard Onboarding** - Step-by-step welcome flow for new users
+
+### Fixed
+- AI Generate returning empty content (reasoning model token allocation)
+- 400 errors from unsupported temperature values
+- API key decryption in submit_post, check_claim_status, refresh_agent_stats
+- Double API health recording
+- Success detection (Moltbook uses "message" for success, not errors)
 
 ## [3.1.0] - 2026-01-31
 
 ### Added
 - Open source release preparation
-- Comprehensive logging system with file output (`~/.moltbook_logs/`)
-- Full diagnostics tab with system info, API health, and troubleshooting
+- Comprehensive logging system with file output
+- Full diagnostics tab with system info, API health, troubleshooting
 - API health monitoring with success rates and response times
-- "Open on Moltbook" buttons as workaround for comment API issues
 - Topic picker for AI-generated posts (9 categories)
-- Smart error dialogs with workaround suggestions
 - Security status display in diagnostics
 - Debug info copy-to-clipboard feature
-- CONTRIBUTING.md, CHANGELOG.md, proper LICENSE
 
 ### Changed
-- Improved AI post generation with topic variety (no more repetitive content)
+- Improved AI post generation with topic variety
 - Enhanced error handling with specific exception types
 - Converted debug prints to proper logging
-- Better documentation and code comments
-
-### Fixed
-- Bare `except:` clauses replaced with specific exceptions
-- Debug output cleaned up for production use
-
-## [3.0.1] - 2026-01-31
-
-### Added
-- Topic picker dropdown in Compose tab
-- 9 topic categories for AI generation
-- Random topic selection option
-
-### Changed
-- AI generation prompt now includes topic direction
-- Higher temperature for more creative outputs
-- Explicit instructions to avoid repetitive content
 
 ## [3.0.0] - 2026-01-31
 
 ### Added
-- 🔧 Diagnostics tab with full system monitoring
+- Diagnostics tab with full system monitoring
 - API health tracking (success rates, response times)
 - Known issues section with workarounds
-- Dependency status checker
-- Security status display
-- Recent errors log viewer
-- Quick actions (copy debug info, clear logs, test endpoints)
 - File logging to `~/.moltbook_logs/`
 - "Open on Moltbook" button for comment workaround
-
-### Changed
-- Version bump to 3.0.0 for major diagnostics update
-
-## [2.6.2] - 2026-01-31
-
-### Added
-- Multi-endpoint retry for comment creation
-- Detailed API debugging output
-- Comment API issue detection
-
-### Fixed
-- Legacy plaintext API key handling
-- Better error messages for API failures
-
-## [2.6.1] - 2026-01-31
-
-### Fixed
-- Security module handling of legacy plaintext keys
-- Debug logging for 401 errors
 
 ## [2.6.0] - 2026-01-31
 
 ### Added
-- 🔒 Three-tier API key encryption (keyring/AES/XOR)
+- Three-tier API key encryption (keyring/AES/XOR)
 - Secure storage module with automatic encryption
-- Expand/collapse comments feature (show all comments)
+- Expand/collapse comments feature
 - Database schema for drafts, templates, brand settings
-- Default post templates
-- Security status indicator in settings
 
 ### Security
 - API keys now encrypted before database storage
 - System keyring integration (Windows Credential Manager, macOS Keychain)
-- Fallback to AES-256 encryption
-- Machine-specific encryption keys
 
 ## [2.5.0] - 2026-01-31
 
 ### Added
-- Edit agent dialog (modify name, description, personality)
+- Edit agent dialog
 - AI-generated reply button for comments
 - Inline reply to comments from My Posts tab
-- Comment notification highlighting (🔔 for others' comments)
-
-### Changed
-- Improved My Posts display with embedded comments
-- Better comment threading UI
-
-## [2.4.0] - 2026-01-30
-
-### Added
-- My Posts tab with comment viewing
-- Quick reply functionality
-- Comment count statistics
-
-## [2.3.0] - 2026-01-30
-
-### Added
-- Feed browser tab
-- Auto-engage feature
-- Post scheduling system
-
-## [2.2.0] - 2026-01-30
-
-### Added
-- Activity log with export to CSV
-- AI activity analysis
-- Agent statistics dashboard
-
-## [2.1.0] - 2026-01-30
-
-### Added
-- Dark/Light theme toggle
-- Settings panel with OpenAI API key
-- Import/Export agents as JSON
+- Comment notification highlighting
 
 ## [2.0.0] - 2026-01-30
 
@@ -136,7 +79,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Complete UI redesign with CustomTkinter
 - Multi-agent management
 - AI-powered post generation
-- Real-time preview in compose
+- Dark/Light theme toggle
+- Import/Export agents as JSON
 
 ## [1.0.0] - 2026-01-29
 
